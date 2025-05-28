@@ -4,14 +4,16 @@ ALGORITHM sentence_analysis
 
 /*Declaration of variables */
 VAR
-    sentence : STRING; /*The sentence input, a sentence ending with a period (.) */
-    characterCount, wordCount, vowelCount : INTEGER := 0; /*counter for characters, words and vowels */
+    sentence : STRING; /*The input sentence ending with a period*/
+    characterCount, wordCount, vowelCount : INTEGER := 0; /*Counters for characters, words and vowels */
     i : INTEGER; /*Loop index */
     currentChar : CHAR;  /*Current character in loop */
 
 /*Algorithm's body */
 BEGIN
     Read(sentence)
+    /*Initialized wordcount to 1 since the last word is not followed by a space */
+    wordCount := 1
 
     /*Loop through each character in the sentence */
     FOR i FROM 1 TO length(sentence) DO
