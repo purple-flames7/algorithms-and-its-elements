@@ -1,36 +1,36 @@
-/* Sentense Analysis Algorithm */
-/* This algortithm reads a sentence character by character and counts the total number of characters, words and vowels */
+
+//This algortithm reads a sentence character by character and counts the total number of characters, words and vowels 
 ALGORITHM sentence_analysis
 
-/*Declaration of variables */
+//Declaration of variables 
 VAR
-    sentence : STRING; /*The input sentence ending with a period*/
-    characterCount, wordCount, vowelCount : INTEGER := 0; /*Counters for characters, words and vowels */
-    i : INTEGER; /*Loop index */
-    currentChar : CHAR;  /*Current character in loop */
+    sentence : STRING; //The input sentence ending with a period
+    characterCount, wordCount, vowelCount : INTEGER := 0; //Counters for characters, words and vowels 
+    i : INTEGER; //Loop index //
+    currentChar : CHAR;  //Current character in loop //
 
-/*Algorithm's body */
+//Algorithm's body 
 BEGIN
     Read(sentence)
-    /*Initialized wordcount to 1 since the last word is not followed by a space */
+    //Initialized wordcount to 1 since the last word is not followed by a space 
     wordCount := 1
 
-    /*Loop through each character in the sentence */
+    //Loop through each character in the sentence 
     FOR i FROM 1 TO length(sentence) DO
         currentChar := character at position i in sentence
         characterCount := characterCount + 1
-        /* If the character is a space, increase the word count */
+        // If the character is a space, increase the word count 
         IF currentChar = ' ' THEN
             wordCount := wordCount + 1
         ENDIF
-        /*If the character is a vowel, increase vowel count*/
+        // If the character is a vowel, increase vowel count
         IF currentChar = 'a' OR currentChar = 'e' OR currentChar = 'i' OR currentChar = 'o' OR currentChar = 'u'
            OR currentChar = 'A' OR currentChar = 'E' OR currentChar = 'I' OR currentChar = 'O' OR currentChar = 'U' THEN
             vowelCount := vowelCount + 1
         ENDIF
     ENDFOR
 
-    /*Output*/
+    //Output
     Write("Characters: ", characterCount)
     Write("Words: ", wordCount)
     Write("Vowels: ", vowelCount)
